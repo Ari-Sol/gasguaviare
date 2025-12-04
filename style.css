@@ -169,7 +169,7 @@ header nav a:hover {
   background: rgba(209,180,180,0.8) center/cover no-repeat;
 }
 .objective-content {
-  max-width: 900px; margin: 0 20px; background: rgba(255,255,255,0.9);
+  max-width: 900%; margin: 0 20px; background: rgba(255,255,255,0.9);
   padding: 28px; border-radius: 10px; text-align: center;
 }
 .objective-slide h3 { margin: 0 0 12px; color: #2e6b2e; font-size: 22px; }
