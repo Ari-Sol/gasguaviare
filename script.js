@@ -120,10 +120,12 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
+      } else {
+        entry.target.classList.remove("visible"); // se quita al salir
       }
     });
   }, { threshold: 0.2 });
 
   reveals.forEach(el => observer.observe(el));
 });
+
