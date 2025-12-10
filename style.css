@@ -1,0 +1,680 @@
+/* ==================== Base ==================== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif; /* tipografía formal */
+  background: linear-gradient(to bottom, #fff, #ffffff);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #222;
+}
+
+/* Herencia tipográfica */
+h1, h2, h3, h4, h5, h6, p, nav a, footer, .card, .hero, .description, .slide {
+  font-family: inherit;
+}
+h3 {
+  font-family: 'Poppins', sans-serif; /* mantiene la misma tipografía */
+  font-weight: 100;                   /* más delgado (Light) */
+  font-size: 22px;                    /* ajusta tamaño si quieres */
+  color: #2e6b2e;                     /* tu color corporativo */
+  margin-bottom: 12px;
+}
+
+h4 {
+  font-family: 'Georgia', serif; /* mantiene la misma tipografía */
+  font-weight: 100;                   /* más delgado (Light) */
+  font-size: 22px;                    /* ajusta tamaño si quieres */
+  color: #2e6b2e;                     /* tu color corporativo */
+  margin-bottom: 12px;
+}
+
+/* ==================== Header & Nav ==================== */
+header {
+  position: absolute;   /* se coloca encima del carrusel */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0); /* sin color de fondo */
+  z-index: 10;           /* asegura que quede por encima del slider */
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: center; /* centra todo horizontalmente */
+  align-items: center;     /* alinea verticalmente logo y enlaces */
+  gap: 20px;               /* espacio entre logo y enlaces */
+}
+
+header nav a {
+  color: #fff;           /* texto blanco para que contraste con el carrusel */
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #cdeac0;        /* color de hover */
+}
+
+
+/* ==================== Slider Inicio ==================== */
+.inicio-slider {
+  width: 100%;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+}
+.inicio-slide {
+  background-size: cover;       /* ajusta sin deformar */
+  background-position: center;  /* centra la imagen */
+  background-repeat: no-repeat; /* evita repeticiones */
+}
+.inicio-slides {
+  display: flex;
+  transition: transform 0.9s ease;
+}
+
+.inicio-slide {
+  min-width: 100%;
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.inicio-content {
+  background: rgba(255,255,255,0.85);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.inicio-slider {
+  font-family: 'Poppins', sans-serif;
+}
+
+.inicio-content h2 { color: #2e6b2e; font-size: 28px; margin-bottom: 12px; }
+.inicio-content p { font-size: 18px; color: #333; }
+
+.inicio-nav button {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,0.3); border: none; color: #fff;
+  font-size: 24px; padding: 8px 12px; cursor: pointer;
+}
+#inicio-prev { left: 16px; }
+#inicio-next { right: 16px; }
+
+/* ==================== LOGO texto inicio ==================== */
+.hero {
+  text-align: center; padding: 80px 10px; color: #2e6b2e;
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+}
+.hero h1 { font-size: 28px; margin-bottom: 10px; }
+
+/* ==================== Historia y descripcion ==================== */
+
+.historia { 
+  display: flex; 
+  flex-direction: row; 
+  align-items: flex-start; 
+  justify-content: center; 
+  gap: 0px; 
+  max-width: 1200px; 
+  margin: 60px auto; 
+  padding: 0 20px; 
+} 
+
+.bloque { 
+  aspect-ratio: 2.67   / 4;
+  flex: 1 1 50%; 
+  max-width: 338px; 
+  position: relative; 
+  background: #fff; 
+  border-radius: 12px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.15); 
+  overflow: hidden; 
+  display: flex; 
+  flex-direction: column; 
+  z-index: 2; 
+  transition: all 0.4s ease; 
+  overflow-y: auto;       /* 👈 habilita scroll vertical */
+} 
+
+.bloque:hover { 
+  transform: translateY(-15px) scale(1.1); /* zoom + elevación */ 
+  z-index: 10; /* se coloca encima del resto */ 
+} 
+
+.bloque .contenido { 
+  padding: clamp(15px, 3vw, 30px); 
+  background: #ffffff; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+} 
+
+.bloque h2 { 
+  color: #2e6b2e; 
+  font-size: clamp(14px, 2vw, 22px); 
+  margin-bottom: 16px; 
+  text-align: center; 
+} 
+
+.bloque p { 
+  font-size: clamp(12px, 1.6vw, 16px); 
+  line-height: 1.6; 
+  color: #333; 
+  text-align: justify; 
+} 
+
+.bloque.centro { 
+  flex: 1 1 50%; 
+  max-width: 338px; 
+  position: relative; 
+  z-index: 2; 
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3); 
+  transition: all 0.4s ease; 
+} 
+
+.bloque.centro:hover { 
+  transform: scale(1.1) translateY(-15px); /* un poco más grande */ 
+  z-index: 10; /* se coloca encima del resto */ 
+} 
+
+
+@media (max-width: 768px) {
+  .historia {
+    flex-direction: row;
+    align-items: center; /* centra los bloques */
+  }
+
+  .bloque, .bloque.centro {
+    max-width: 100%; /* ocupan todo el ancho disponible */
+  }
+}
+
+
+/* ==================== mision ==================== */
+.mision h2 {
+  padding-top: clamp(100px, 15vh, 200px); /* solo arriba, responsivo */
+  font-size: clamp(32px, 8vw, 100px);
+  font-weight: bold;
+  line-height: 1.1;
+  color: #7dbd7d;
+  margin: 50px 50px 20px 5vw; /* espejo: más margen a la derecha */
+  letter-spacing: 2px;
+  text-align: right;
+}
+
+.mision p {
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.6;
+  color: #333;
+  margin: 0 50px 0 5vw; /* espejo: margen derecho */
+  text-align: justify;
+}
+
+/* ==================== vision ==================== */
+.vision h2 {
+  
+  font-size: clamp(32px, 8vw, 100px);
+  font-weight: bold;
+  line-height: 1.1;
+  color: rgb(129, 194, 129);
+  margin: 50px 5vw 20px 50px; /* espejo: más margen a la izquierda */
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+.vision p {
+  padding-bottom: clamp(100px, 15vh, 200px); /* solo abajo, responsivo */
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.6;
+  color: #333;
+  margin: 0 5vw 0 50px; /* espejo: margen izquierdo */
+  text-align: justify;
+}
+
+
+/* ==================== Slider Objetivos ==================== */
+.objectives-slider {
+  width: 100%;
+  height: 600px;
+  margin: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.objectives-slides {
+  display: flex;
+  transition: transform 0.9s cubic-bezier(.22,.9,.31,1);
+}
+
+.objective-slide {
+  min-width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.objective-content {
+  max-width: 900px;
+  margin: 0 20px;
+  background: rgba(0, 0, 0, 0); /* overlay sutil */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: justify;
+}
+
+.objective-content h2 {
+  text-align: center;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow:
+    0 1px 1px rgba(16, 4, 4, 0.6),
+    0 2px 4px rgba(0,0,0,0.3),
+    0 0 30px rgba(255,255,255,0.2);
+  letter-spacing: 2px;
+  position: relative;
+}
+
+
+.objective-content p {
+  text-shadow: 2px 2px 6px rgb(0, 0, 0);
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.objectives-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+#obj-prev { left: 16px; }
+#obj-next { right: 16px; }
+
+.objectives-dots {
+  text-align: center;
+  margin-top: 12px;
+}
+.objectives-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0 6px;
+  display: inline-block;
+  cursor: pointer;
+}
+.objectives-dots .dot.active {
+  background: #2e6b2e;
+}
+
+/* ==================== Sección Servicios ==================== */
+.servicios {
+  text-align: justify;
+  margin: 20px auto;
+  margin-bottom: 20px;
+  max-width: 900px;
+  padding: clamp(60px, 10vh, 120px) 20px 0 20px;
+}
+
+.servicios h2 {
+  color: rgb(114, 178, 114);
+  text-align: center;
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 15px;
+}
+
+.servicios p {
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.6;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ==================== Sección Imagen ==================== */
+.gas-section {
+  margin: 20px auto;
+  max-width: 1200px; /* ancho máximo opcional */
+  padding: 0 20px;
+  text-align: center;
+}
+
+.gas-img {
+  display: inline-block; /* se centra con text-align */
+  width: 100%;       /* ocupa todo el ancho disponible */
+  height: auto;      /* mantiene proporción */
+  display: block;    /* elimina espacios extra */
+  border-radius: 12px; /* opcional, esquinas redondeadas */
+}
+
+
+/* ==================== presencia ==================== */
+.presencia h2 {
+  padding-top: clamp(100px, 15vh, 200px); /* solo arriba, responsivo */
+  font-size: clamp(32px, 8vw, 100px);
+  font-weight: bold;
+  line-height: 1.1;
+  color: #8ccf8c;
+  margin: 50px 5vw 20px 50px;
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+.presencia h2 span {
+  font-size: clamp(40px, 10vw, 120px); /* PRESENCIA más grande */
+  display: inline-block;
+}
+
+/* ==================== presencia ==================== */
+.mapa {
+  margin: 80px auto;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.mapa-box {
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  position: relative;
+}
+
+.mapa-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Etiquetas */
+.map-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* encima de flechas */
+}
+
+.map-label span {
+  background: rgba(255,255,255,0.85);
+  padding: clamp(4px, 0.8vw, 10px) clamp(8px, 1.6vw, 16px);
+  border-radius: 8px;
+  font-size: clamp(12px, 1.2vw, 18px);
+  font-weight: bold;
+  color: #2e6b2e;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  white-space: nowrap;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.map-label.visible span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Flechas */
+.map-arrow {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* debajo de etiquetas */
+}
+
+.map-arrow img {
+  width: clamp(100px, 12vw, 280px);
+  height: auto;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.map-arrow.visible img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Flechas invertidas */
+.map-arrow.invertida {
+  transform: translate(-50%, -50%) scaleX(-1);
+}
+
+
+
+/* ==================== Personal ==================== */
+.personal {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.personal-bloque {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.personal-bloque img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease; /* transición suave */
+}
+
+.personal-bloque img:hover {
+  transform: scale(1.2); /* zoom al pasar el cursor */
+}
+
+.personal-bloque .contenido {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.personal-bloque h2 {
+  color: #2e6b2e;
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.personal-bloque p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;
+}
+
+/* Alternancia de imagen */
+.personal-bloque.izquierda {
+  flex-direction: row;
+}
+.personal-bloque.derecha {
+  flex-direction: row-reverse;
+}
+
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .personal-bloque {
+    flex-direction: column !important; /* apila imagen y texto */
+    text-align: center;
+  }
+
+  .personal-bloque img {
+    max-width: 100%; /* imagen ocupa todo el ancho disponible */
+  }
+
+  .personal-bloque .contenido {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+
+/* ==================== Cards ==================== */
+.cards {
+  display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
+  margin: 30px auto; max-width: 1000px;
+}
+.card {
+  background: #fff; border: 2px solid #a2d5a2; border-radius: 10px;
+  padding: 20px; flex: 1 1 280px; box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover { transform: scale(1.05); }
+.card h3 { color: #2e6b2e; margin-bottom: 10px; }
+
+
+
+/* ==================== Footer ==================== */
+.footer-info {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 20px;
+  margin: 40px; /* margen externo: arriba, abajo y a los lados */
+  background-image: url('footer.jpg'); /* tu imagen aquí */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  flex-wrap: wrap;
+  text-align: left;
+  position: relative; /* necesario para ubicar .footer-esquina dentro del footer */
+  border-radius: 20px; /* esquinas redondeadas */
+  overflow: hidden; /* asegura que la imagen respete el borde redondeado */
+}
+
+.footer-column {
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: bold;
+  color: #bdd5c4;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #e0e0e0;
+}
+
+/* Imagen en esquina */
+.footer-esquina {
+  position: absolute;
+  bottom: 20px;   /* distancia desde abajo */
+  right: 20px;    /* distancia desde la derecha */
+  width: 80px;    /* tamaño de la imagen */
+  height: auto;
+}
+
+/* Derechos reservados debajo */
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 4vw;
+  font-size: 14px;
+  color: #f1f2f1;
+}
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    max-width: 100%;
+  }
+
+  .footer-column h3 {
+    margin-top: 30px;
+  }
+
+  .footer-esquina {
+    position: static;   /* en móviles la imagen se coloca abajo */
+    margin-top: 20px;
+  }
+}
+
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 22px; }
+  .description { padding: 15px; }
+}
+@media (max-width: 480px) {
+  nav a { display: block; margin: 8px 0; }
+  .hero h1 { font-size: 20px; }
+  .card { padding: 15px; }
+  footer { font-size: 12px; }
+  .slider-nav button { width: 36px; height: 36px; }
+  .slider-nav button svg.chev { width: 20px; height: 20px; }
+}
+
+
+/* Scroll Reveal: usado en historia, mapa, personal, etc. */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px); /* posición inicial */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0); /* posición final */
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gas Guaviare S.A. - Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Hero image */
+    .hero {
+      background-image: url('fondo3.png'); /* Cambia 'hero.jpg' por tu imagen */
+      background-size: cover;
+      background-position: center;
+      height: 100vh; /* ocupa toda la pantalla */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.764);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* Sección título */
+    .nosotros-titulo {
+      text-align: center;
+      margin: 0 auto 10px;
+      padding: 0 10px;
+    }
+
+    .nosotros-titulo h2 {
+      color: rgb(119, 179, 119);
+      font-size: 25px;
+      font-weight: bold;
+      margin: 0;
+      padding-top: 50px;
+    }
+
+    /* Botones */
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+    .botones img {
+      width: 180px;
+      height: auto;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .botones img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Contenedor principal */
+.form-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Encabezado */
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.form-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2e6b2e; /* verde corporativo */
+  margin: 0;
+}
+
+/* Etiquetas */
+.form-container label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: 600;
+  color: #2e6b2e;
+}
+
+/* Inputs y textarea */
+.form-container input[type="text"],
+.form-container input[type="tel"],
+.form-container input[type="email"],
+.form-container input[type="file"],
+.form-container textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bdd5c4;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  border-color: #2e6b2e;
+  box-shadow: 0 0 6px rgba(46,107,46,0.3);
+  outline: none;
+}
+
+/* Checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.checkbox-container label {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Botón */
+.form-container button {
+  width: 100%;
+  padding: 14px;
+  background: #2e6b2e;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form-container button:hover {
+  background: #256025;
+  transform: translateY(-2px);
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- ==================== SECCIÓN: Header (logo + navegación) ==================== -->
+  <header>
+  <nav>
+    <a href="index.html">
+      <img src="logo.png" alt="Servicios" style="height:40px;">
+    </a>
+  </nav>
+</header>
+
+  <!-- ==================== HERO IMAGE ==================== -->
+  <section class="hero">
+    <h1>Trabaja con nosotros</h1>
+  </section>
+
+
+  <!-- ==================== FORMULARIO DE TRABAJE CON NOSOTROS ==================== -->
+
+
+  <div class="form-container">
+    <div class="form-header">
+      <img src="https://img.icons8.com/ios-filled/50/4CAF50/badge.png" alt="ID Badge" />
+      <h2>FORME PARTE DE NUESTRO EQUIPO</h2>
+    </div>
+    <form action="https://formspree.io/f/mrbnyjzg" method="POST" enctype="multipart/form-data">
+      <label for="nombre">NOMBRE</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="apellidos">APELLIDOS</label>
+      <input type="text" id="apellidos" name="apellidos" required />
+
+      <label for="celular">NÚMERO CELULAR</label>
+      <input type="tel" id="celular" name="celular" required />
+
+      <label for="correo">CORREO ELECTRÓNICO</label>
+      <input type="email" id="correo" name="correo" required />
+
+      <label for="perfil">PERFIL (mínimo 40 y máximo 320 caracteres)</label>
+      <textarea id="perfil" name="perfil" minlength="40" maxlength="320" required></textarea>
+
+      <label for="hojaVida">Adjunte su Hoja de Vida</label>
+      <input type="file" id="hojaVida" name="hojaVida" required />
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="terminos" name="terminos" required />
+        <label for="terminos">Acepto los términos y condiciones *</label>
+      </div>
+
+      <button type="submit">ENVIAR</button>
+    </form>
+  </div>
+  <!-- ==================== SECCIÓN: Footer ==================== -->
+ <footer class="footer-info">
+  <div class="footer-column">
+    <h3>Nosotros</h3>
+    <ul>
+      <li><a href="trabajeaqui.html" target="_blank">Trabaje con nosotros</a></li>
+      <li><a href="politicas.html" target="_blank">Documentos y políticas</a></li>
+      <li><a href="valores.html" target="_blank">Valores</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-column">
+    <h3>Servicio al Cliente</h3>
+    <ul>
+      <li><a href="mailto:gasguavi@gmail.com">PQRS</a></li>
+      <li>(+57) 310 377 6954 - 310 535 8738</li>
+      <li><strong>Nivel nacional</strong></li>
+      <li>01 8000 95 95 95</li>
+    </ul>
+  </div>
+
+  <div class="footer-column">
+    <h3>Aspectos legales</h3>
+    <ul>
+      <li><a href="https://drive.google.com/file/d/1o2yDZU-7xKTjqICIweU5jNWO-2nnqcxl/view?usp=sharing"target="_blank">Resolución CREG 80</a></li>
+      <li><a href="tarifas.html"target="_blank">Tarifas</a></li>
+    </ul>
+    <!-- Imagen en esquina -->
+  <img src="vigilada.png" alt="Logo" class="footer-esquina">
+  </div>
+  
+   <div class="footer-bottom"> 
+      <p>© 2025 Gas Guaviare S.A. E.S.P. Todos los derechos reservados by Hoppers.</p>
+  </div>
+
+</footer>
+
+</body>
+</html>
