@@ -11,19 +11,20 @@
       margin: 0;
       font-family: 'Poppins', sans-serif;
     }
+    
 
     /* Hero image */
-    .hero {
-      background-image: url('fondo3.png'); /* Cambia 'hero.jpg' por tu imagen */
-      background-size: cover;
-      background-position: center;
-      height: 100vh; /* ocupa toda la pantalla */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255, 255, 255, 0.764);
-      text-align: center;
-    }
+ .hero {
+  background-image: url('fondo3.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100dvh; /* dvh = unidad moderna que sí respeta altura real en móviles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.764);
+  text-align: center;
+}
 
     .hero h1 {
       font-size: 3rem;
@@ -227,7 +228,7 @@
     <a href="index.html">
       <img src="logo.png" alt="Servicios" style="height:40px;">
     </a>
-  </nav>
+    </nav>
 </header>
   <!-- ==================== HERO IMAGE ==================== -->
   <section class="hero">
