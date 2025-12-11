@@ -146,11 +146,18 @@ header nav a:hover {
   }
 }
 /* ==================== Slider Inicio ==================== */
+/* ==================== Slider Inicio ==================== */
 .inicio-slider {
   width: 100%;
   height: 700px;
   position: relative;
   overflow: hidden;
+}
+
+.inicio-slide {
+  background-size: cover; /* ajusta sin deformar */
+  background-position: center; /* centra la imagen */
+  background-repeat: no-repeat; /* evita repeticiones */
 }
 
 .inicio-slides {
@@ -163,7 +170,6 @@ header nav a:hover {
   height: 700px;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,43 +187,35 @@ header nav a:hover {
   font-family: 'Poppins', sans-serif;
 }
 
-.inicio-content h2 { 
-  color: #2e6b2e; 
-  font-size: 28px; 
-  margin-bottom: 12px; 
+.inicio-content h2 {
+  color: #2e6b2e;
+  font-size: 28px;
+  margin-bottom: 12px;
 }
 
-.inicio-content p { 
-  font-size: 18px; 
-  color: #333; 
+.inicio-content p {
+  font-size: 18px;
+  color: #333;
 }
 
 .inicio-nav button {
-  position: absolute; 
-  top: 50%; 
+  position: absolute;
+  top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.3); 
-  border: none; 
+  background: rgba(0,0,0,0.3);
+  border: none;
   color: #fff;
-  font-size: 24px; 
-  padding: 8px 12px; 
+  font-size: 24px;
+  padding: 8px 12px;
   cursor: pointer;
 }
 
-#inicio-prev { left: 16px; }
-#inicio-next { right: 16px; }
-
-/* Responsive Slider */
-@media (max-width: 768px) {
-  .inicio-content h2 { font-size: 20px; }
-  .inicio-content p { font-size: 14px; }
-  header nav { flex-direction: column; gap: 10px; }
+#inicio-prev {
+  left: 16px;
 }
 
-@media (max-width: 480px) {
-  .inicio-slider { height: 300px; }
-  .inicio-content { padding: 15px; }
-  .inicio-nav button { font-size: 18px; padding: 6px 10px; }
+#inicio-next {
+  right: 16px;
 }
 
 /* ==================== LOGO texto inicio ==================== */
