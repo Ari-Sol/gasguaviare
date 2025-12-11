@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gas Guaviare S.A. - Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Hero image */
+    .hero {
+      background-image: url('fondo3.png'); /* Cambia 'hero.jpg' por tu imagen */
+      background-size: cover;
+      background-position: center;
+      height: 100vh; /* ocupa toda la pantalla */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.764);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* Sección título */
+    .nosotros-titulo {
+      text-align: center;
+      margin: 0 auto 10px;
+      padding: 0 10px;
+    }
+
+    .nosotros-titulo h2 {
+      color: rgb(119, 179, 119);
+      font-size: 25px;
+      font-weight: bold;
+      margin: 0;
+      padding-top: 50px;
+    }
+
+    /* Botones */
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+    .botones img {
+      width: 180px;
+      height: auto;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .botones img:hover {
+      transform: scale(1.1);
+    }
+
+
+    /* ==================== Sección Tarifas Mensuales ==================== */
+    .tarifas-mensuales {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.tarifas-mensuales h2 {
+  color: rgb(119, 179, 119);
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.contenedor-meses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.mes h3 {
+  color: rgb(119, 179, 119);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.mes iframe {
+  width: 90%;
+  height: 350px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Responsive: tablets */
+@media (min-width: 768px) {
+  .contenedor-meses {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive: celulares */
+@media (max-width: 767px) {
+  .contenedor-meses {
+    grid-template-columns: 1fr; /* en móviles: una sola columna */
+  }
+
+  .mes iframe {
+    width: 95%; /* ocupa casi todo el ancho */
+    height: 300px; /* más compacto en móviles */
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- ==================== SECCIÓN: Header (logo + navegación) ==================== -->
+  <header>
+  <nav>
+    <a href="index.html">
+      <img src="logo.png" alt="Servicios" style="height:40px;">
+    </a>
+  </nav>
+</header>
+
+  <!-- ==================== HERO IMAGE ==================== -->
+  <section class="hero">
+    <h1>Bienvenidos a Gas Guaviare S.A.</h1>
+  </section>
+
+  <!-- ==================== SECCIÓN: Documentos por Mes ==================== -->
+<section class="tarifas-mensuales">
+  <h2>Tarifas Mensuales 2025</h2>
+  <div class="contenedor-meses">
+    <div class="mes">
+      <h3>Enero</h3>
+      <iframe src="Enero.pdf"></iframe>
+    </div>
+    <div class="mes">
+      <h3>Febrero</h3>
+      <iframe src="Febrero.pdf"></iframe>
+    </div>
+    <div class="mes">
+      <h3>Marzo</h3>
+      <iframe src="Marzo.pdf"></iframe>
+    </div>
+    <div class="mes">
+      <h3>Abril</h3>
+      <iframe src="Abril.pdf"></iframe>
+    </div>
+    <div class="mes">
+      <h3>Mayo</h3>
+      <iframe src="Mayo.pdf"></iframe>
+    </div>
+    <div class="mes">
+      <h3>Junio</h3>
+      <iframe src="Junio.pdf"></iframe>
+    </div>
+    <div class="mes">
+      <h3>Julio</h3>
+      <iframe src="Julio.pdf"></iframe>
+    </div>
+    <div class="mes">
+      <h3>Agosto</h3>
+      <iframe src="Agosto.pdf"></iframe>
+    </div>
+    <div class="mes">
+      <h3>Septiembre</h3>
+      <iframe src="Septiembre.pdf"></iframe>
+    </div>
+    <div class="mes">
+      <h3>Octubre</h3>
+      <iframe src="Octubre.pdf"></iframe>
+    </div>
+    <div class="mes">
+      <h3>Noviembre</h3>
+      <iframe src="Noviembre.pdf"></iframe>
+    </div>
+    <div class="mes">
+      <h3>Diciembre</h3>
+      <iframe src="Diciembre.pdf"></iframe>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- ==================== SECCIÓN: Footer ==================== -->
+  <footer class="footer-info">
+  <div class="footer-column">
+    <h3>Nosotros</h3>
+    <ul>
+      <li><a href="trabajeaqui.html" target="_blank">Trabaje con nosotros</a></li>
+      <li><a href="politicas.html" target="_blank">Documentos y políticas</a></li>
+      <li><a href="valores.html" target="_blank">Valores</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-column">
+    <h3>Servicio al Cliente</h3>
+    <ul>
+      <li><a href="mailto:gasguavi@gmail.com">PQRS</a></li>
+      <li>(+57) 310 377 6954 - 310 535 8738</li>
+      <li><strong>Nivel nacional</strong></li>
+      <li>01 8000 95 95 95</li>
+    </ul>
+  </div>
+
+  <div class="footer-column">
+    <h3>Aspectos legales</h3>
+    <ul>
+      <li><a href="Creg080-2019.pdf"target="_blank">Resolución CREG 80</a></li>
+      <li><a href="tarifas.html"target="_blank">Tarifas</a></li>
+    </ul>
+    <!-- Imagen en esquina -->
+  <img src="vigilada.png" alt="Logo" class="footer-esquina">
+  </div>
+  
+   <div class="footer-bottom"> 
+      <p>© 2025 Gas Guaviare S.A. E.S.P. Todos los derechos reservados by Hoppers.</p>
+  </div>
+
+</footer>
+
+</body>
+</html>
