@@ -111,7 +111,7 @@
   font-weight: 700;
   font-size: 20px;
   padding: 20px 25px;
-  padding-left: 80px; /* más espacio a la izquierda */
+  padding-left: 140px; /* más espacio a la izquierda */
   border-radius: 30px;
   text-align: left;
   width: 100%;
@@ -135,6 +135,7 @@
   color: #333;
 }
 
+
 /* Bloque invertido */
 .valor-bloque.invertido {
   flex-direction: row-reverse;
@@ -151,7 +152,7 @@
 .valor-bloque.invertido .valor-texto {
   flex: 1;
   min-width: 250px;
-  margin-right: 140px; /* espacio para el muñeco, igual que el margin-left del otro */
+  /* espacio para el muñeco, igual que el margin-left del otro */
 }
 
 .valor-bloque.invertido .valor-titulo {
@@ -160,16 +161,18 @@
   font-weight: 700;
   font-size: 20px;
   padding: 20px 25px;
-  padding-right: 80px; /* espacio interno para que el texto no choque con el muñeco */
+  padding-right: 140px; /* espacio interno para que el texto no choque con el muñeco */
   border-radius: 30px;
   text-align: right; /* igual que el otro, para que se alineen */
   width: 100%;
   margin-bottom: -20px;
+  margin-right: 220px; /* 👈 lo mueve más */
   position: relative;
   z-index: 2;
+  max-width: 95%;
+  transform: translateX(-120px);
+
 }
-
-
 
 /* Responsive */
 @media (max-width: 600px) { 
@@ -189,6 +192,27 @@
 
   .valor-texto {
     width: 100%;
+  }
+}
+
+
+/* 2) Pantallas medianas/pequeñas: quitar el margen rígido y usar translate responsive
+   Sólo tocamos el transform/padding del título invertido para que no rompa el layout. */
+@media (max-width: 900px) {
+  .valor-bloque.invertido .valor-titulo {
+    margin-right: 0 !important;                      /* quitamos el margen que rompía */
+    transform: translateX(-16vw) !important;         /* movimiento visual responsivo */
+    padding-right: clamp(40px, 10vw, 140px) !important;
+    text-align: center !important;                   /* opcional: centra texto en móvil */
+    width: 100% !important;
+  }
+}
+
+/* 3) Móviles muy pequeños: ajuste ligero del translate para que no se salga */
+@media (max-width: 480px) {
+  .valor-bloque.invertido .valor-titulo {
+    transform: translateX(-22vw) !important;
+    padding-right: clamp(20px, 12vw, 80px) !important;
   }
 }
 
