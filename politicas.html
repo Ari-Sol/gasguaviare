@@ -147,29 +147,49 @@
       color: #f1f2f1;
     }
 
-    /* ==================== Responsive ==================== */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      .botones { gap: 40px; }
-      .botones img { width: 140px; }
-      .footer-info {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-      }
-      .footer-column { max-width: 100%; }
-      .footer-column h3 { margin-top: 30px; }
-      .footer-esquina { position: static; margin-top: 20px; }
-    }
+   /* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
 
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 1.6rem; }
-      .botones { gap: 20px; }
-      .botones img { width: 120px; }
-      .footer-info { margin: 20px; }
-      .footer-bottom { font-size: 12px; }
-    }
+  .botones {
+    gap: 20px;
+    flex-direction: column;   /* 👈 fuerza que se apilen verticalmente */
+    align-items: center;      /* 👈 centra los botones */
+  }
+
+  .botones img {
+    width: 140px;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-column { max-width: 100%; }
+  .footer-column h3 { margin-top: 30px; }
+  .footer-esquina { position: static; margin-top: 20px; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.6rem; }
+
+  .botones {
+    gap: 15px;
+    flex-direction: column;   /* 👈 también en pantallas muy pequeñas */
+    align-items: center;
+  }
+
+  .botones img {
+    width: 120px;
+  }
+
+  .footer-info { margin: 20px; }
+  .footer-bottom { font-size: 12px; }
+}
+
   </style>
 </head>
 <body>
