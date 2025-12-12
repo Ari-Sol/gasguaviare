@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gas Guaviare S.A. - Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+
+    /* Hero image */
+ .hero {
+  background-image: url('fondo3.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100dvh; /* dvh = unidad moderna que sí respeta altura real en móviles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.764);
+  text-align: center;
+}
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* Sección título */
+    .nosotros-titulo {
+      text-align: center;
+      margin: 0 auto 10px;
+      padding: 0 10px;
+    }
+
+    .nosotros-titulo h2 {
+      color: rgb(119, 179, 119);
+      font-size: 25px;
+      font-weight: bold;
+      margin: 0;
+      padding-top: 50px;
+    }
+
+    /* Botones */
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+    .botones img {
+      width: 180px;
+      height: auto;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .botones img:hover {
+      transform: scale(1.1);
+    }
+
+/* ==================== Sección Valores GAS GUAVIARE ==================== */
+.valores-gas {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 20px;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.valor-bloque {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.valor-imagen {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  z-index: 3;
+}
+
+.valor-imagen img {
+  width: 120px;
+  height: auto;
+}
+
+.valor-texto {
+  flex: 1;
+  min-width: 250px;
+  text-align: justify;
+}
+
+.valor-titulo {
+  background: linear-gradient(to right, #a3d9a3e1, #ccedcce1, #ffffffe1);
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 20px 25px;
+  padding-left: 140px; /* más espacio a la izquierda */
+  border-radius: 30px;
+  text-align: left;
+  width: 100%;
+  margin-bottom: -20px;
+  position: relative;
+  z-index: 2;
+}
+
+
+.valor-degrade {
+  border-radius: 50px;
+  padding: 40px 25px 25px;
+  position: relative;
+  z-index: 1;
+  text-align: justify;  /* 👈 texto justificado */
+}
+
+.valor-degrade p {
+  margin: 15px;
+  font-size: 15px;
+  color: #333;
+}
+
+
+/* Bloque invertido */
+.valor-bloque.invertido {
+  flex-direction: row-reverse;
+}
+
+.valor-bloque.invertido .valor-imagen {
+  position: absolute;
+  top: -60px;
+  right: -45px; /* muñeco a la derecha */
+  left: auto;
+  z-index: 3;
+}
+
+.valor-bloque.invertido .valor-texto {
+  flex: 1;
+  min-width: 250px;
+  /* espacio para el muñeco, igual que el margin-left del otro */
+}
+
+.valor-bloque.invertido .valor-titulo {
+  background: linear-gradient(to left, #a3d9a3e1, #ccedcce1, #ffffffe1);
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 20px 25px;
+  padding-right: 140px; /* espacio interno para que el texto no choque con el muñeco */
+  border-radius: 30px;
+  text-align: right; /* igual que el otro, para que se alineen */
+  width: 100%;
+  margin-bottom: -20px;
+  margin-right: 220px; /* 👈 lo mueve más */
+  position: relative;
+  z-index: 2;
+  max-width: 95%;
+  transform: translateX(-120px);
+
+}
+
+/* Responsive */
+@media (max-width: 600px) { 
+  .valores-gas {
+    padding: 40px 80px;   /* 👈 agrega espacio a los lados en móviles */
+  }
+
+  .valor-bloque {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .valor-titulo {
+    margin: 0 auto -20px;
+  }
+
+  .valor-texto {
+    width: 100%;
+  }
+}
+
+
+/* 2) Pantallas medianas/pequeñas: quitar el margen rígido y usar translate responsive
+   Sólo tocamos el transform/padding del título invertido para que no rompa el layout. */
+@media (max-width: 900px) {
+  .valor-bloque.invertido .valor-titulo {
+    margin-right: 0 !important;                      /* quitamos el margen que rompía */
+    transform: translateX(-16vw) !important;         /* movimiento visual responsivo */
+    padding-right: clamp(40px, 10vw, 140px) !important;
+    text-align: center !important;                   /* opcional: centra texto en móvil */
+    width: 100% !important;
+  }
+}
+
+/* 3) Móviles muy pequeños: ajuste ligero del translate para que no se salga */
+@media (max-width: 480px) {
+  .valor-bloque.invertido .valor-titulo {
+    transform: translateX(-22vw) !important;
+    padding-right: clamp(20px, 12vw, 80px) !important;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+<!-- ==================== SECCIÓN: Header (logo + navegación) ==================== -->
+  <header>
+  <nav>
+    <a href="index.html">
+      <img src="logo.png" alt="Servicios" style="height:40px;">
+    </a>
+    </nav>
+</header>
+  <!-- ==================== HERO IMAGE ==================== -->
+  <section class="hero">
+    <h1>Nuestros Valores</h1>
+  </section>
+
+  <!-- ==================== SECCIÓN: Título Nosotros ==================== -->
+  <section class="nosotros-titulo">
+    <h2>VALORES CORPORATIVOS</h2>
+  </section>
+
+<section class="valores-gas">
+  <!-- Bloque 1 -->
+  <div class="valor-bloque">
+    <div class="valor-imagen">
+      <img src="muneco.png" alt="Muñeco Excelencia">
+    </div>
+    <div class="valor-texto">
+      <div class="valor-titulo">EXCELENCIA</div>
+      <div class="valor-degrade">
+        <p>Prestamos un servicio de alta calidad, eficiente y confiable, manteniendo altos estándares en nuestros procesos y en el desempeño de cada colaborador.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bloque 2 -->
+  <div class="valor-bloque invertido">
+    <div class="valor-imagen">
+      <img src="muneco.png" alt="Muñeco Cumplimiento">
+    </div>
+    <div class="valor-texto">
+      <div class="valor-titulo">CUMPLIMIENTO</div>
+      <div class="valor-degrade">
+        <p>Honramos cada compromiso con responsabilidad y oportunidad, gestionando nuestras operaciones de forma ágil para ofrecer respuestas efectivas.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bloque 3 -->
+  <div class="valor-bloque">
+    <div class="valor-imagen">
+      <img src="muneco.png" alt="Muñeco Excelencia">
+    </div>
+    <div class="valor-texto">
+      <div class="valor-titulo">TRANSPARENCIA</div>
+      <div class="valor-degrade">
+        <p>Fomentamos relaciones éticas y claras, promoviendo un trato digno, la coherencia y el bienestar de trabajadores, contratistas y usuarios.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bloque 2 -->
+  <div class="valor-bloque invertido">
+    <div class="valor-imagen">
+      <img src="muneco.png" alt="Muñeco Cumplimiento">
+    </div>
+    <div class="valor-texto">
+      <div class="valor-titulo">RESPONSABILIDAD SOCIAL</div>
+      <div class="valor-degrade">
+        <p>Trabajamos por el desarrollo económico, social y ambiental de la región, especialmente en territorios PDET, contribuyendo a mejorar la calidad de vida y a la construcción de paz mediante la energía.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- ==================== SECCIÓN: Footer ==================== -->
+  <footer class="footer-info">
+  <div class="footer-column">
+    <h3>Nosotros</h3>
+    <ul>
+      <li><a href="trabajeaqui.html" target="_blank">Trabaje con nosotros</a></li>
+      <li><a href="politicas.html" target="_blank">Documentos y políticas</a></li>
+      <li><a href="valores.html" target="_blank">Valores Corporativos</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-column">
+    <h3>Servicio al Cliente</h3>
+    <ul>
+      <li><a href="PQR.html" target="_blank">PQRS</a></li>
+      <li>(+57) 310 377 6954 - 310 535 8738</li>
+      <li><strong>Nivel nacional</strong></li>
+      <li>01 8000 95 95 95</li>
+    </ul>
+  </div>
+
+  <div class="footer-column">
+    <h3>Aspectos legales</h3>
+    <ul>
+      <li><a href="Creg080-2019.pdf" target="_blank">Resolución CREG 80</a></li>
+      <li><a href="tarifas.html"target="_blank">Tarifas</a></li>
+    </ul>
+    <!-- Imagen en esquina -->
+  <img src="vigilada.png" alt="Logo" class="footer-esquina">
+  </div>
+  
+   <div class="footer-bottom"> 
+      <p>© 2025 Gas Guaviare S.A. E.S.P. Todos los derechos reservados by Hoppers.</p>
+  </div>
+
+</footer>
+
+</body>
+</html>
