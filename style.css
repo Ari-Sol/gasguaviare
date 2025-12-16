@@ -1,0 +1,939 @@
+/* ==================== Base ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif; /* tipografía formal */
+  background: linear-gradient(to bottom, #fff, #ffffff);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #222;
+}
+
+/* Herencia tipográfica */
+h1, h2, h3, h4, h5, h6, p, nav a, footer, .card, .hero, .description, .slide {
+  font-family: inherit;
+}
+
+h3 {
+  font-family: 'Poppins', sans-serif; /* mantiene la misma tipografía */
+  font-weight: 100;                   /* más delgado (Light) */
+  font-size: 22px;                    /* ajusta tamaño si quieres */
+  color: #2e6b2e;                     /* tu color corporativo */
+  margin-bottom: 12px;
+}
+
+h4 {
+  font-family: 'Georgia', serif; /* mantiene la misma tipografía */
+  font-weight: 100;                   
+  font-size: 22px;                    
+  color: #2e6b2e;                     
+  margin-bottom: 12px;
+}
+
+/* Sección título */
+.nosotros-titulo {
+text-align: center;
+margin: 0 auto 10px;
+padding: 0 10px;
+}
+
+.nosotros-titulo h2 {
+color: rgb(119, 179, 119);
+font-size: 25px;
+font-weight: bold;
+margin: 0;
+padding-top: 80px;
+padding-bottom: 40px;
+}
+
+/* ==================== Header & Nav ==================== */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: 10;
+  padding: 15px;
+}
+
+header nav {
+  position: relative;
+  display: flex;
+  justify-content: center; /* logo centrado */
+  align-items: center;
+  gap: 40px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  font-family: 'Poppins', sans-serif; /* mantiene tu tipografía */
+}
+
+header nav a:hover {
+  color: #cdeac0;
+}
+
+/* Escritorio */
+.menu-links.desktop {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-links.mobile {
+  display: none; /* oculto en escritorio */
+}
+
+.menu-toggle {
+  display: none; /* oculto en escritorio */
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .menu-links.desktop {
+    display: none; /* ocultar bloques laterales */
+  }
+
+  .menu-links.mobile {
+    display: none;
+    flex-direction: column;
+    background: rgba(146, 188, 146, 0.26); /* verde corporativo */
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 130px;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* sombra elegante */
+    animation: slideIn 0.3s ease forwards; /* animación */
+  }
+  
+  .menu-links.mobile a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.174);
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+
+  .menu-links.mobile a:last-child {
+    border-bottom: none;
+  }
+
+  .menu-links.mobile a:hover {
+    color: #325821;
+    transform: translateX(5px); /* efecto sutil */
+  }
+
+  .menu-links.mobile.show {
+    display: flex; /* se muestran al activar */
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    transform: translateY(-50%); 
+    font-size: 28px;
+    color: #ffffff; /* verde corporativo */
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+}
+
+/* Animación de entrada */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== Slider Inicio ==================== */
+.inicio-slider {
+  width: 100%;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+}
+
+.inicio-slide {
+  background-size: cover; /* ajusta sin deformar */
+  background-position: center; /* centra la imagen */
+  background-repeat: no-repeat; /* evita repeticiones */
+}
+
+.inicio-slides {
+  display: flex;
+  transition: transform 0.9s ease;
+}
+
+.inicio-slide {
+  min-width: 100%;
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inicio-content {
+  background: rgba(255,255,255,0.85);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.inicio-slider {
+  font-family: 'Poppins', sans-serif;
+}
+
+.inicio-content h2 {
+  color: #2e6b2e;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.inicio-content p {
+  font-size: 18px;
+  color: #333;
+}
+
+.inicio-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#inicio-prev {
+  left: 16px;
+}
+
+#inicio-next {
+  right: 16px;
+}
+
+/* ==================== LOGO texto inicio ==================== */
+.hero {
+  text-align: center; 
+  padding: 7.5vw 10px 20px; 
+  color: #2e6b2e;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 20px;
+}
+
+.hero h1 { 
+  font-size: 28px; 
+  margin-bottom: 10px; 
+}
+
+/* ==================== Historia y descripción ==================== */
+.historia { 
+  display: flex; 
+  flex-direction: row; 
+  align-items: flex-start; 
+  justify-content: center; 
+  gap: 0px; 
+  max-width: 1200px; 
+  margin: 60px auto; 
+  padding: 0 20px; 
+} 
+
+.bloque { 
+  aspect-ratio: 2.63 / 4;
+  flex: 1 1 50%; 
+  max-width: 330px; 
+  position: relative; 
+  background: #fff; 
+  border-radius: 12px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.15); 
+  overflow: hidden; 
+  display: flex; 
+  flex-direction: column; 
+  z-index: 2; 
+  transition: all 0.4s ease; 
+  overflow-y: auto;
+    /* Scroll invisible */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+} 
+
+
+.bloque:hover {
+  transform: scale(1.1) translateY(-15px) !important;
+  z-index: 10 !important;
+}
+.bloque.centro:hover {
+  transform: scale(1.1) translateY(-15px);
+  z-index: 10;
+}
+
+
+.bloque .contenido { 
+  padding: clamp(15px, 3vw, 30px); 
+  background: #ffffff; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+} 
+
+.bloque h2 { 
+  color: #2e6b2e; 
+  font-size: clamp(14px, 2vw, 22px); 
+  margin-bottom: 15px; 
+  text-align: center; 
+} 
+
+.bloque p { 
+  font-size: clamp(12px, 1.6vw, 16px); 
+  line-height: 1.6; 
+  color: #333; 
+  text-align: justify; 
+} 
+
+.bloque.centro { 
+  aspect-ratio: 2.67 / 4;
+  flex: 1 1 50%; 
+  max-width: 338px; 
+  position: relative; 
+  z-index: 2; 
+  transition: all 0.4s ease; 
+} 
+
+
+
+
+/* Responsive Historia */
+/* Responsive Historia */
+@media (max-width: 768px) {
+  .historia { 
+    flex-direction: row; 
+    align-items: center; 
+  }
+  @media (max-width: 768px) {
+  .bloque { 
+    max-width: 100%; 
+    overflow-y: auto;
+    /* Scroll invisible */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  
+  .bloque::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+}
+
+}
+
+/* ==================== Misión ==================== */
+.mision h2 {
+  padding-top: clamp(100px, 15vh, 200px);
+  font-size: clamp(32px, 8vw, 100px);
+  font-weight: bold;
+  line-height: 1.1;
+  color: #7dbd7d;
+  margin: 50px 50px 20px 5vw;
+  letter-spacing: 2px;
+  text-align: right;
+}
+
+.mision p {
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.6;
+  color: #333;
+  margin: 0 50px 0 5vw;
+  text-align: justify;
+}
+
+/* ==================== Visión ==================== */
+.vision h2 {
+  font-size: clamp(32px, 8vw, 100px);
+  font-weight: bold;
+  line-height: 1.1;
+  color: rgb(129, 194, 129);
+  margin: 50px 5vw 20px 50px;
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+.vision p {
+  padding-bottom: clamp(100px, 15vh, 200px);
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.6;
+  color: #333;
+  margin: 0 5vw 0 50px;
+  text-align: justify;
+}
+
+/* ==================== Sección Valores GAS GUAVIARE ==================== */
+.valores-gas {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 20px;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.valor-bloque {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.valor-imagen {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  z-index: 3;
+}
+
+.valor-imagen img {
+  width: 120px;
+  height: auto;
+}
+
+.valor-texto {
+  flex: 1;
+  min-width: 250px;
+  text-align: justify;
+}
+
+.valor-titulo {
+  background: linear-gradient(to right, #a3d9a3e1, #ccedcce1, #ffffffe1);
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 20px 25px;
+  padding-left: 140px; /* más espacio a la izquierda */
+  border-radius: 30px;
+  text-align: left;
+  width: 100%;
+  margin-bottom: -20px;
+  position: relative;
+  z-index: 2;
+}
+
+
+.valor-degrade {
+  border-radius: 50px;
+  padding: 40px 25px 25px;
+  position: relative;
+  z-index: 1;
+  text-align: justify;  /* 👈 texto justificado */
+}
+
+.valor-degrade p {
+  margin: 15px;
+  font-size: 15px;
+  color: #333;
+}
+
+
+/* Bloque invertido */
+.valor-bloque.invertido {
+  flex-direction: row-reverse;
+}
+
+.valor-bloque.invertido .valor-imagen {
+  position: absolute;
+  top: -60px;
+  right: -45px; /* muñeco a la derecha */
+  left: auto;
+  z-index: 3;
+}
+
+.valor-bloque.invertido .valor-texto {
+  flex: 1;
+  min-width: 250px;
+  /* espacio para el muñeco, igual que el margin-left del otro */
+}
+
+.valor-bloque.invertido .valor-titulo {
+  background: linear-gradient(to left, #a3d9a3e1, #ccedcce1, #ffffffe1);
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 20px 25px;
+  padding-right: 140px; /* espacio interno para que el texto no choque con el muñeco */
+  border-radius: 30px;
+  text-align: right; /* igual que el otro, para que se alineen */
+  width: 100%;
+  margin-bottom: -20px;
+  margin-right: 220px; /* 👈 lo mueve más */
+  position: relative;
+  z-index: 2;
+  max-width: 95%;
+  transform: translateX(-120px);
+
+}
+
+/* Responsive */
+@media (max-width: 600px) { 
+  .valores-gas {
+    padding: 40px 80px;   /* 👈 agrega espacio a los lados en móviles */
+  }
+
+  .valor-bloque {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .valor-titulo {
+    margin: 0 auto -20px;
+  }
+
+  .valor-texto {
+    width: 100%;
+  }
+}
+
+
+/* 2) Pantallas medianas/pequeñas: quitar el margen rígido y usar translate responsive
+   Sólo tocamos el transform/padding del título invertido para que no rompa el layout. */
+@media (max-width: 900px) {
+  .valor-bloque.invertido .valor-titulo {
+    margin-right: 0 !important;                      /* quitamos el margen que rompía */
+    transform: translateX(-16vw) !important;         /* movimiento visual responsivo */
+    padding-right: clamp(40px, 10vw, 140px) !important;
+    text-align: center !important;                   /* opcional: centra texto en móvil */
+    width: 100% !important;
+  }
+}
+
+/* 3) Móviles muy pequeños: ajuste ligero del translate para que no se salga */
+@media (max-width: 480px) {
+  .valor-bloque.invertido .valor-titulo {
+    transform: translateX(-22vw) !important;
+    padding-right: clamp(20px, 12vw, 80px) !important;
+  }
+}
+
+/* ==================== Sección Servicios ==================== */
+.servicios {
+  text-align: justify;
+  margin: 20px auto;
+  margin-bottom: 20px;
+  max-width: 900px;
+  padding: clamp(60px, 10vh, 120px) 20px 0 20px;
+}
+
+.servicios h2 {
+  color: rgb(114, 178, 114);
+  text-align: center;
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 15px;
+}
+
+.servicios p {
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.6;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+.servicios-contenido {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr; /* texto - imagen - texto */
+  align-items: center;
+  gap: clamp(10px, 2vw, 20px);          /* espacio proporcional */
+  margin-top: 30px;
+}
+
+.servicios-texto {
+  font-size: clamp(0.8rem, 2vw, 1rem); /* escala según pantalla */
+  line-height: 1;
+  color: #333;
+  text-align: justify; /* por defecto justificado */
+}
+
+.servicios-imagen {
+  display: flex;
+  justify-content: center;
+}
+
+.servicios-imagen img {
+  width: clamp(150px, 25vw, 300px); /* imagen proporcional */
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.servicios-imagen img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .servicios-contenido {
+    grid-template-columns: 1fr; /* todo en una sola columna */
+    text-align: center; /* centra textos e imagen */
+  }
+
+  .servicios-texto {
+    font-size: 1rem; /* aumenta un poco la legibilidad */
+    text-align: center; /* solo en móviles se centra */
+  }
+
+  .servicios-imagen img {
+    width: 80%; /* ocupa más espacio en móviles */
+    max-width: 280px; /* límite para que no se deforme */
+    margin: 0 auto; /* centra la imagen */
+  }
+}
+
+/* ==================== Presencia ==================== */
+.presencia h2 {
+  padding-top: clamp(100px, 15vh, 200px);
+  font-size: clamp(32px, 8vw, 100px);
+  font-weight: bold;
+  line-height: 1.1;
+  color: #8ccf8c;
+  margin: 50px 5vw 20px 50px;
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+.presencia h2 span {
+  font-size: clamp(40px, 10vw, 120px);
+  display: inline-block;
+}
+
+/* Responsive ajustes para estas secciones */
+@media (max-width: 768px) {
+  .objectives-slider,
+  .objective-slide {
+    height: 400px;
+  }
+
+  .mision h2,
+  .vision h2,
+  .presencia h2 {
+    margin: 20px;
+    font-size: clamp(24px, 6vw, 40px);
+  }
+
+  .servicios {
+    padding: 40px 15px;
+  }
+}
+
+/* ==================== Mapa ==================== */
+.mapa {
+  margin: 80px auto;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.mapa-box {
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  position: relative;
+}
+
+.mapa-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Etiquetas */
+.map-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.map-label span {
+  background: rgba(255,255,255,0.85);
+  padding: clamp(4px, 0.8vw, 10px) clamp(8px, 1.6vw, 16px);
+  border-radius: 8px;
+  font-size: clamp(12px, 1.2vw, 18px);
+  font-weight: bold;
+  color: #2e6b2e;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.map-label.visible span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Flechas */
+.map-arrow {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.map-arrow img {
+  width: clamp(100px, 12vw, 280px);
+  height: auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.map-arrow.visible img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Flechas invertidas */
+.map-arrow.invertida {
+  transform: translate(-50%, -50%) scaleX(-1);
+}
+
+/* ==================== Personal ==================== */
+.personal {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.personal-bloque {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.personal-bloque img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease;
+}
+
+.personal-bloque img:hover {
+  transform: scale(1.1);
+}
+
+.personal-bloque .contenido {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.personal-bloque h2 {
+  color: #2e6b2e;
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.personal-bloque p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;
+}
+
+/* Alternancia de imagen */
+.personal-bloque.izquierda { flex-direction: row; }
+.personal-bloque.derecha { flex-direction: row-reverse; }
+
+/* Responsive Personal */
+@media (max-width: 768px) {
+  .personal-bloque {
+    flex-direction: column !important;
+    text-align: center;
+  }
+  .personal-bloque img { max-width: 100%; }
+  .personal-bloque .contenido { width: 100%; padding: 20px; }
+  .personal { gap: 30px; }
+}
+
+/* ==================== Cards ==================== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px auto;
+  max-width: 1000px;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid #a2d5a2;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 280px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover { transform: scale(1.05); }
+.card h3 { color: #2e6b2e; margin-bottom: 10px; }
+
+/* ==================== Footer ==================== */
+.footer-info {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 20px;
+  margin: 40px;
+  background-image: url('footer.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  flex-wrap: wrap;
+  text-align: left;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.footer-info a {
+  text-decoration: none;   /* quita subrayado por defecto */
+  color: #f1f2f1;          /* color de los links */
+  transition: all 0.3s ease; /* animación suave */
+}
+
+.footer-info a:hover {
+  text-decoration: underline; /* se subraya al pasar el mouse */
+  color: #ffffff;             /* opcional: cambia el color */
+}
+.footer-column {
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: bold;
+  color: #bdd5c4;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li { margin-bottom: 10px; }
+
+.footer-column ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover { color: #e0e0e0; }
+
+/* Imagen en esquina */
+.footer-esquina {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
+  height: auto;
+}
+
+/* Derechos reservados debajo */
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 5vw;
+  font-size: 14px;
+  color: #f1f2f1;
+}
+
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  .footer-column { max-width: 100%; }
+  .footer-column h3 { margin-top: 30px; }
+  .footer-esquina { position: static; margin-top: 20px; }
+}
+
+@media (max-width: 480px) {
+  .footer-info { margin: 20px; }
+}
+
+/* ==================== Responsive General ==================== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 22px; }
+  .description { padding: 15px; }
+}
+
+@media (max-width: 480px) {
+  nav a { display: block; margin: 8px 0; }
+  .hero h1 { font-size: 20px; }
+  .card { padding: 15px; flex: 1 1 100%; }
+  footer { font-size: 12px; }
+  .slider-nav button { width: 36px; height: 36px; }
+  .slider-nav button svg.chev { width: 20px; height: 20px; }
+}
+
+/* ==================== Scroll Reveal ==================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

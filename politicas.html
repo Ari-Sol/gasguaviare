@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gas Guaviare S.A. - Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- Tipografía -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==================== Base ==================== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #222;
+    }
+
+    /* ==================== Header ==================== */
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      z-index: 10;
+      padding: 15px;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header nav a img {
+      height: 40px;
+    }
+
+    /* ==================== Hero ==================== */
+    .hero {
+      background-image: url('fondo3.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.85);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* ==================== Nosotros ==================== */
+    .nosotros-titulo {
+      text-align: center;
+      margin: 0 auto 10px;
+      padding: 0 10px;
+    }
+
+    .nosotros-titulo h2 {
+      color: rgb(119, 179, 119);
+      font-size: 25px;
+      font-weight: bold;
+      margin: 0;
+      padding-top: 50px;
+    }
+
+    /* ==================== Botones ==================== */
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+    .botones img {
+      width: 180px;
+      height: auto;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .botones img:hover { transform: scale(1.1); }
+
+   /* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+
+  .botones {
+    gap: 20px;
+    flex-direction: column;   /* 👈 fuerza que se apilen verticalmente */
+    align-items: center;      /* 👈 centra los botones */
+  }
+
+  .botones img {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.6rem; }
+
+  .botones {
+    gap: 15px;
+    flex-direction: column;   /* 👈 también en pantallas muy pequeñas */
+    align-items: center;
+  }
+
+  .botones img {
+    width: 120px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- ==================== Header ==================== -->
+  <header>
+    <nav>
+      <a href="index.html">
+        <img src="logo.png" alt="Logo Gas Guaviare">
+      </a>
+    </nav>
+  </header>
+
+  <!-- ==================== Hero ==================== -->
+  <section class="hero">
+    <h1>Nuestras políticas</h1>
+  </section>
+
+  <!-- ==================== Título Nosotros ==================== -->
+  <section class="nosotros-titulo">
+    <h2>DOCUMENTOS Y POLÍTICAS</h2>
+  </section>
+
+  <!-- ==================== Botones ==================== -->
+  <section class="botones">
+    <a href="docsst.pdf" target="_blank">
+      <img src="sst.png" alt="Botón 1">
+    </a>
+    <a href="docacoso.pdf" target="_blank">
+      <img src="acosolaboral.png" alt="Botón 2">
+    </a>
+    <a href="docprevencion.pdf" target="_blank">
+      <img src="prevencion.png" alt="Botón 3">
+    </a>
+  </section>
+  <!-- ==================== SECCIÓN: Footer ==================== -->
+ <footer id="contacto" class="footer-info">
+  <div class="footer-column">
+    <h3>Nosotros</h3>
+    <ul>
+      <li><a href="trabajeaqui.html" target="_blank">Trabaje con nosotros</a></li>
+      <li><a href="politicas.html" target="_blank">Documentos y políticas</a></li>
+      <li><a href="objetivos.html" target="_blank">Objetivos</a></li>
+    </ul>
+  </div>
+  <div class="footer-column">
+    <h3>Servicio al Cliente</h3>
+    <ul>
+      <li><a href="PQR.html" target="_blank">Canales de atención PQR</a></li>
+      <li><strong>línea de emergencias</strong></li>
+      <li>(+57) 310 377 6954 - 310 535 8738</li>
+      <li><strong>Nivel nacional</strong></li>
+      <li>01 8000 95 95 95</li>
+    </ul>
+  </div>
+  <div class="footer-column">
+    <h3>Aspectos legales</h3>
+    <ul>
+      <li><a href="Creg080-2019.pdf" target="_blank">Resolución CREG 80</a></li>
+      <li><a href="tarifas.html"target="_blank">Tarifas</a></li>
+    </ul>
+    <!-- Imagen en esquina -->
+  <img src="vigilada.png" alt="Logo" class="footer-esquina">
+  </div>
+  
+  <div class="footer-bottom"> 
+      <p>Empresa vigilada por la Superintendencia de Servicios Públicos Domiciliarios – SSPD</p>
+      <p>Empresa de Servicios Públicos Domiciliarios sujeta a la Ley 142 de 1994.</p>
+      <br>
+      <br>
+      <p>© 2025 Gas Guaviare S.A. E.S.P. Todos los derechos reservados by Heritage.</p>
+  </div>
+</footer>
+
+</body>
+</html>
